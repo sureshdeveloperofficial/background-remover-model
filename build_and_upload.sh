@@ -38,7 +38,7 @@ if [ "$REPOSITORY" = "testpypi" ]; then
     echo ""
     echo "Uploaded to TestPyPI!"
     echo "Test installation with:"
-    echo "  pip install --index-url https://test.pypi.org/simple/ background-remover-api"
+    echo "  pip install --index-url https://test.pypi.org/simple/ background-remover-model"
 else
     echo ""
     echo "Uploading to PyPI..."
@@ -50,6 +50,6 @@ else
     echo ""
     echo "Uploaded to PyPI!"
     echo "Install with:"
-    echo "  pip install background-remover-api"
+    echo "  pip install background-remover-model"
 fi
 

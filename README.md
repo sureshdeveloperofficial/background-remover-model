@@ -4,17 +4,7 @@ A production-ready full-stack application for removing backgrounds from images a
 
 ## Installation
 
-### Install from PyPI
-
-The easiest way to install the Background Remover API is via pip:
-
-```bash
-pip install background-remover-api
-```
-
-This will install the package and all its dependencies. After installation, you can import and use the API in your Python projects.
-
-### Requirements
+### Prerequisites
 
 - Python 3.10 or higher
 - FFmpeg (for video processing)
@@ -24,9 +14,75 @@ This will install the package and all its dependencies. After installation, you 
 - **macOS**: `brew install ffmpeg`
 - **Windows**: Download from [ffmpeg.org](https://ffmpeg.org/download.html)
 
+### Install from PyPI
+
+The recommended way to install the Background Remover Model is using a virtual environment:
+
+#### Step 1: Install Python venv (if not already installed)
+
+**Ubuntu/Debian:**
+```bash
+sudo apt install python3-venv -y
+```
+
+**macOS:**
+```bash
+# venv is usually pre-installed with Python
+python3 --version
+```
+
+**Windows:**
+```bash
+# venv is usually pre-installed with Python
+python --version
+```
+
+#### Step 2: Create Virtual Environment
+
+```bash
+python3 -m venv bgremover-env
+```
+
+#### Step 3: Activate Virtual Environment
+
+**Linux/macOS:**
+```bash
+source bgremover-env/bin/activate
+```
+
+**Windows:**
+```bash
+bgremover-env\Scripts\activate
+```
+
+#### Step 4: Install the Package
+
+```bash
+pip install background-remover-model
+```
+
+This will install the package and all its dependencies. After installation, you can import and use the API in your Python projects.
+
+#### Step 5: Deactivate Virtual Environment (when done)
+
+```bash
+deactivate
+```
+
+**Note:** Always activate your virtual environment before using the package. You can run Python scripts inside the activated environment.
+
 ### Quick Start (After Installation)
 
-Once installed, you can run the API server:
+**Important:** Make sure your virtual environment is activated before running the server:
+
+```bash
+# Activate virtual environment (if not already activated)
+source bgremover-env/bin/activate  # Linux/macOS
+# or
+bgremover-env\Scripts\activate      # Windows
+```
+
+Once installed and activated, you can run the API server:
 
 ```bash
 # Run the FastAPI server
@@ -110,24 +166,39 @@ from app.routers import image_router, video_router
 
 ### Option 1: Install from PyPI (Recommended for API Usage)
 
-1. **Install the package**
+1. **Set up virtual environment** (see Installation section above)
    ```bash
-   pip install background-remover-api
+   # Install venv if needed
+   sudo apt install python3-venv -y  # Ubuntu/Debian
+   
+   # Create and activate virtual environment
+   python3 -m venv bgremover-env
+   source bgremover-env/bin/activate
    ```
 
-2. **Install FFmpeg** (required for video processing)
+2. **Install the package**
+   ```bash
+   pip install background-remover-model
+   ```
+
+3. **Install FFmpeg** (required for video processing)
    - Ubuntu/Debian: `sudo apt-get install ffmpeg`
    - macOS: `brew install ffmpeg`
    - Windows: Download from [ffmpeg.org](https://ffmpeg.org/download.html)
 
-3. **Run the API server**
+4. **Run the API server**
    ```bash
    uvicorn app.main:app --host 0.0.0.0 --port 8000
    ```
 
-4. **Access the API**
+5. **Access the API**
    - API: http://localhost:8000
    - API Documentation: http://localhost:8000/docs
+
+6. **Deactivate virtual environment** (when done)
+   ```bash
+   deactivate
+   ```
 
 ### Option 2: Using Docker (Full Stack Application)
 

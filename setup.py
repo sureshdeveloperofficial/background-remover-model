@@ -6,7 +6,7 @@ this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text(encoding="utf-8")
 
 setup(
-    name="background-remover-api",
+    name="background-remover-model",
     version="1.0.1",
     author="sureshshanmugasundaram",
     author_email="sureshdeveloperofficial@gmail.com",
