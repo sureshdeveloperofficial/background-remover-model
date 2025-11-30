@@ -2,6 +2,47 @@
 
 A production-ready full-stack application for removing backgrounds from images and videos using the [backgroundremover](https://github.com/nadermx/backgroundremover) library.
 
+## Installation
+
+### Install from PyPI
+
+The easiest way to install the Background Remover API is via pip:
+
+```bash
+pip install background-remover-api
+```
+
+This will install the package and all its dependencies. After installation, you can import and use the API in your Python projects.
+
+### Requirements
+
+- Python 3.10 or higher
+- FFmpeg (for video processing)
+
+**Note:** FFmpeg must be installed separately on your system:
+- **Ubuntu/Debian**: `sudo apt-get install ffmpeg`
+- **macOS**: `brew install ffmpeg`
+- **Windows**: Download from [ffmpeg.org](https://ffmpeg.org/download.html)
+
+### Quick Start (After Installation)
+
+Once installed, you can run the API server:
+
+```bash
+# Run the FastAPI server
+uvicorn app.main:app --host 0.0.0.0 --port 8000
+```
+
+Or use it as a Python package in your code:
+
+```python
+from app.main import app
+from app.routers import image_router, video_router
+
+# The FastAPI app is ready to use
+# Access API docs at http://localhost:8000/docs
+```
+
 ## Features
 
 - 🖼️ **Image Background Removal**: Remove backgrounds from images with various models
@@ -67,12 +108,33 @@ A production-ready full-stack application for removing backgrounds from images a
 
 ## Quick Start
 
+### Option 1: Install from PyPI (Recommended for API Usage)
+
+1. **Install the package**
+   ```bash
+   pip install background-remover-api
+   ```
+
+2. **Install FFmpeg** (required for video processing)
+   - Ubuntu/Debian: `sudo apt-get install ffmpeg`
+   - macOS: `brew install ffmpeg`
+   - Windows: Download from [ffmpeg.org](https://ffmpeg.org/download.html)
+
+3. **Run the API server**
+   ```bash
+   uvicorn app.main:app --host 0.0.0.0 --port 8000
+   ```
+
+4. **Access the API**
+   - API: http://localhost:8000
+   - API Documentation: http://localhost:8000/docs
+
+### Option 2: Using Docker (Full Stack Application)
+
 ### Prerequisites
 
 - Docker and Docker Compose
 - (Optional) Node.js 18+ and Python 3.10+ for local development
-
-### Using Docker (Recommended)
 
 1. **Clone or navigate to the project directory**
 
@@ -323,10 +385,3 @@ For issues related to:
 - [backgroundremover](https://github.com/nadermx/backgroundremover) - The core library for background removal
 - FastAPI - Modern Python web framework
 - React & Vite - Frontend framework and build tool
-
-# background-reomver-model
-# background-remover-model
-# background-remover-model
-# background-remover-model
-# background-remover-model
-# background-remover-model
