@@ -30,7 +30,11 @@ twine check dist/*
 if [ "$REPOSITORY" = "testpypi" ]; then
     echo ""
     echo "Uploading to TestPyPI..."
-    twine upload --repository testpypi dist/*
+    if [ -n "$TWINE_PASSWORD" ]; then
+        twine upload --repository testpypi --username __token__ --password "$TWINE_PASSWORD" dist/*
+    else
+        twine upload --repository testpypi dist/*
+    fi
     echo ""
     echo "Uploaded to TestPyPI!"
     echo "Test installation with:"
@@ -38,7 +42,11 @@ if [ "$REPOSITORY" = "testpypi" ]; then
 else
     echo ""
     echo "Uploading to PyPI..."
-    twine upload dist/*
+    if [ -n "$TWINE_PASSWORD" ]; then
+        twine upload --username __token__ --password "$TWINE_PASSWORD" dist/*
+    else
+        twine upload dist/*
+    fi
     echo ""
     echo "Uploaded to PyPI!"
     echo "Install with:"

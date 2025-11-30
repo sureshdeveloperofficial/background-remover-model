@@ -7,7 +7,7 @@ long_description = (this_directory / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="background-remover-api",
-    version="1.0.0",
+    version="1.0.1",
     author="sureshshanmugasundaram",
     author_email="sureshdeveloperofficial@gmail.com",
     description="A FastAPI-based API for removing backgrounds from images and videos using backgroundremover",

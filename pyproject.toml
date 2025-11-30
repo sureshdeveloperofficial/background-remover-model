@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "background-remover-api"
-version = "1.0.0"
+version = "1.0.1"
 description = "A FastAPI-based API for removing backgrounds from images and videos using backgroundremover"
 readme = "README.md"
 requires-python = ">=3.10"
