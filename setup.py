@@ -8,12 +8,12 @@ long_description = (this_directory / "README.md").read_text(encoding="utf-8")
 setup(
     name="background-remover-api",
     version="1.0.0",
-    author="Your Name",
-    author_email="your.email@example.com",
+    author="sureshshanmugasundaram",
+    author_email="sureshdeveloperofficial@gmail.com",
     description="A FastAPI-based API for removing backgrounds from images and videos using backgroundremover",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/background-remover-model",
+    url="https://github.com/sureshdeveloperofficial/background-remover-model",
     packages=find_packages(where="backend"),
     package_dir={"": "backend"},
     classifiers=[
